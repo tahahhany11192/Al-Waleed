@@ -38,13 +38,13 @@ const CreateAllFolder = require("./config/uploadFolderCreateScript");
 
 CreateAllFolder();
 
-mongoose.connect(process.env.DATABASE);
-  .then(() =>
-    console.log("==============Mongodb Database Connected Successfully==============")
-  )
+mongoose
+  .connect(process.env.DATABASE)
+  .then(() => {
+    console.log("==============Mongodb Database Connected Successfully==============");
+  })
   .catch((err) => {
-    console.error("Database Not Connected !!!", err.message);
-    process.exit(1);
+    console.log("MongoDB connection error:", err);
   });
 
 app.disable("x-powered-by");
