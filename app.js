@@ -38,11 +38,7 @@ const CreateAllFolder = require("./config/uploadFolderCreateScript");
 
 CreateAllFolder();
 
-mongoose
-  .connect(process.env.DATABASE, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+mongoose.connect(process.env.DATABASE);
   .then(() =>
     console.log("==============Mongodb Database Connected Successfully==============")
   )
